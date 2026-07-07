@@ -1,0 +1,40 @@
+package springmvcpractices.com;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class InfoController {
+
+    @RequestMapping("/about")
+    @ResponseBody
+    public String about() {
+        return "About Us Page";
+    }
+
+    @RequestMapping("/contact")
+    @ResponseBody
+    public String contact() {
+        return "Contact Us Page";
+    }
+}
+----------------------
+package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+-------------------------
+http://localhost:8080/about
+http://localhost:8080/contact
+---------output----------
+/about  -> About Us Page
+/contact -> Contact Us Page
