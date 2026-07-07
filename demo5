@@ -1,0 +1,32 @@
+package springmvcpractices.com;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+//Example 5 — Class-level @RequestMapping + method-level mapping
+@Controller
+@RequestMapping("/shop")
+public class ShopController {
+
+    @RequestMapping("/products")
+    @ResponseBody
+    public String products() {
+        return "List of Products";
+    }
+}
+--------------------------------
+package springmvcpractices.com;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+------------------------------
+  http://localhost:8080/shop/products
+------------------output------------
+List of Products
