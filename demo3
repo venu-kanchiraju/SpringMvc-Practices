@@ -1,0 +1,40 @@
+package springmvcpractices.com;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+//PROBLEM3: Returning a view name (HTML page)
+@Controller
+public class HomeController {
+    @RequestMapping("/home")
+    public String home() {
+        return "home"; // resolves to templates/home.html
+    }
+}
+
+---------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+---------------------------------
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to Home Page</h1>
+</body>
+</html>
+  ---------------------------------
+
+  Welcome to Home Page
