@@ -1,0 +1,30 @@
+package springmvcpractices.com;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+//PROBLEM2: Simplest controller returning plain text
+@Controller
+public class HelloController {
+
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String hello() {
+        return "Hello Spring MVC!";
+    }
+}
+---------------------------------
+  package springmvcpractices.com;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+-------------------------
+  search in web browser http://localhost:8080/hello
+  ------------------output---------
+  Hello Spring MVC!
