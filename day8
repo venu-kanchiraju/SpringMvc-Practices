@@ -1,0 +1,29 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+    @PostMapping("/createuser")
+    public String createUser(){
+        return "User created successfully";
+    }
+}
+----------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+-----------------------
+  //use post method using postman
+  output:-
+    User created successfully
