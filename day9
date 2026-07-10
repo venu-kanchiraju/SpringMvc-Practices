@@ -1,0 +1,33 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+  @PutMapping("/users/{id}")
+    public String updateUser(@PathVariable int id){
+      return "The id is : "+id+" updated";
+  }
+}
+---------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+----------------
+http://localhost:8080/users/570 
+//use the postman to use that put
+
+output:-
+  The id is 570 updated
