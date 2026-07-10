@@ -1,0 +1,29 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class UserController {
+  @DeleteMapping("/users/{id}")
+    public String updateUser(@PathVariable int id){
+      return "The id is : "+id+" deleted";
+  }
+}
+--------------------------------
+package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+-------------------------
+output:- The id is: 570 deleted
+http://localhost:8080/users/570
+
+//use postman to delete
