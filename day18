@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-//Binding param into a Map
+//single path variable
 @RestController
 public class GreetController {
     @GetMapping("/users/{id}")
