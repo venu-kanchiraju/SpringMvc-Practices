@@ -1,0 +1,31 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+//path variable with a different variable name
+@RestController
+public class ControllerUser {
+    @GetMapping("/books/{bookId}")
+    @ResponseBody
+    public String getBook(@PathVariable ("bookId") String isbn){
+        return "Book ISBN: "+isbn;
+    }
+}
+------------------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+---------------------------------------
+output:- Book ISBN: 570
+  http://localhost:8080/books/570
