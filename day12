@@ -1,0 +1,30 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+//using @PatchMapping annotation
+@RestController
+public class UserController {
+
+    @PatchMapping("/users/{id}")
+    public String patchUser(@PathVariable int id){
+        return "User "+" "+id+" "+"Updated";
+    }
+}
+-----------------------------------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+--------------------------------------------------
+  output:- User 570 Updated
+    
