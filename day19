@@ -1,0 +1,32 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+//Multiple Path variables
+@RestController
+public class GreetController {
+    @GetMapping("/orders/{orderId}/items/{itemId}")
+   @ResponseBody
+    public String getItem(@PathVariable int orderId,@PathVariable int itemId){
+        return "order "+orderId+ ", Item "+ itemId;
+    }
+}
+--------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+------------------------------
+  output:-order 6, Item 7
+    http://localhost:8080/orders/6/items/7
+    
