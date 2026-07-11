@@ -1,0 +1,29 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.*;
+
+//Combining @PathVariable and @RequestParam
+@RestController
+public class ControllerUser {
+    @GetMapping("/products/{id}")
+    @ResponseBody
+    public String getProduct(@PathVariable int id, @RequestParam (defaultValue = "USD") String currency){
+       return "Product "+id+ "Priced in" +currency;
+    }
+}
+-------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+--------------------------------------
+output:- Product 3Priced inINR
+  http://localhost:8080/products/3?currency=INR
