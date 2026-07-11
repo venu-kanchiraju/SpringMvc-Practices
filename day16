@@ -1,0 +1,29 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+//create a using @RequestParam which is Optional Param using required=false
+@RestController
+public class GreetController {
+    @GetMapping("/filter")
+    public String greet(@RequestParam (required = false) String category){
+   return category==null ? "Showing all items":"Showing category: "+category;
+    }
+}
+---------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+-------------------------------
+  output:- Showing all items
+    http://localhost:8080/filter
