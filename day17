@@ -1,0 +1,33 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+//Binding param into a Map
+@RestController
+public class GreetController {
+    @GetMapping("/all-params")
+    public String greet(@RequestParam Map<String,String> params){
+        return "Received params: "+params;
+    }
+}
+---------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+------------------------------------
+  output:Received params: {a=1, b=2}
+
+http://localhost:8080/all-params?a=1&b=2
