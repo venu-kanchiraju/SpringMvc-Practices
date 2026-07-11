@@ -1,0 +1,30 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+//create a using @RequestParam which is basic
+@RestController
+public class GreetController {
+    @GetMapping("/greet")
+    public String greet(@RequestParam String name){
+        return "The user name is: "+ name;
+    }
+}
+------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+-------------------------------------------------------
+ http://localhost:8080/greet?name=venu
+output:-
+The user name is: venu
