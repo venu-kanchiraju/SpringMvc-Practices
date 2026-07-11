@@ -1,0 +1,29 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.*;
+
+//Combining @PathVariable and @RequestParam
+@RestController
+public class ControllerUser {
+    @GetMapping("/employee/{id:[0-9]+}")
+    @ResponseBody
+    public String getProduct(@PathVariable String id){
+        return "Employee numeric ID: "+id;
+    }
+}
+--------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+---------------------------------
+  output:- Employee numeric ID: 123
+    http://localhost:8080/employee/123
