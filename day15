@@ -1,0 +1,30 @@
+package springmvcpractices.com;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+//create a using @RequestParam which is multiple Params
+@RestController
+public class GreetController {
+    @GetMapping("/search")
+    public String greet(@RequestParam String keyword,@RequestParam int page){
+        return "Searching "+keyword+ "on page "+page;
+    }
+}
+-------------------------------------
+  package springmvcpractices.com;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringApp {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringApp.class, args);
+    }
+}
+------------------------
+  output:- Searching laptopon page 2
+
+    http://localhost:8080/search?keyword=laptop&page=2
