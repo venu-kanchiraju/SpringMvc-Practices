@@ -2,7 +2,7 @@ package springmvcpractices.com;
 
 import org.springframework.web.bind.annotation.*;
 
-//Combining @PathVariable and @RequestParam
+//pathvariable with regex constraint
 @RestController
 public class ControllerUser {
     @GetMapping("/employee/{id:[0-9]+}")
